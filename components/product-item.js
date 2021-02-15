@@ -45,13 +45,13 @@ class ProductItem extends HTMLElement {
     {
       let dacart = JSON.parse(localStorage.getItem("Cart"));
       dacart.push(id);
-      localStorage.setItem("Cart", dacart);
+      localStorage.setItem("Cart", JSON.stringify(dacart));
     }
     function removeFromCart()
     {
       let recart = JSON.parse(localStorage.getItem("Cart"));
       recart = arrayRemove(recart, id); 
-      localStorage.setItem("Cart", recart);
+      localStorage.setItem("Cart", JSON.stringify(recart));
     }
 
     function arrayRemove(arr, value) { 
